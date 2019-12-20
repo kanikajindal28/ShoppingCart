@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-dark fixed-top">
+  <a class="navbar-brand ml-3 font-weight-bold text-white" href="/home" style="font-family: 'Courgette', cursive;">Shopping Cart</a>
+  <form action="/action_page.php" class="nav navbar-nav navbar-right mr-auto ml-auto form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control text-center " id="search" placeholder="Search for products and more..." size="40" [(ngModel)]="searchedItem" [ngModelOptions]="{standalone:true}">
+    </div>
+    <button class="btn colr ml-1" type="submit" (click)="searchOnclick()"><i class="fa fa-search"></i>Click!</button>
+  </form>
+  <ul class="nav navbar-right mr-2"  >
+    <li class="nav-item text-capitalize" *ngIf="loginService.isUserLoggedIn() && this.role=='admin'">
+      <b><a class="nav-link text-white" >{{this.role}}</a></b>
+    <li>
+    <li class="nav-item" *ngIf="!loginService.isUserLoggedIn()"><a class="nav-link text-white" href="/login"><i class="fa pr-1">&#xf118;</i> Login</a></li>
+    <li class="nav-item" *ngIf="!loginService.isUserLoggedIn()"><a class="nav-link text-white" href="/register"><i class="fa pr-1">&#xf2c1;</i> Sign Up</a></li>
+    <li *ngIf="loginService.isUserLoggedIn()" class="nav-item"><a class="nav-link text-white" href="/cart"><i class="fa pr-1">&#xf290;</i> Bag</a></li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
+      <a class="nav-link text-white" href="/profile"><i class="fa pr-1">&#xf2c1;</i>Profile</a>
+    <li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
+      <a class="nav-link text-white" href="/orderHistory"><i class="fa pr-1">&#xf1da;</i>Order History</a>
+    <li>
+  <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
+    <a class="nav-link text-white" href="/logout">Logout</a>
+  <li>
+
+  </ul>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light mt-5" style="box-shadow:10px 2px 8px lightslategrey;">
+
+        <ul class="navbar navbar-nav m-auto">
+          <li class="nav-item mx-5">
+            <a href="/home" class="nav-link active font"><i class="fa pr-1">&#xf015;</i> Home</a>
+          </li>
+          <li class="nav-item mx-5"><a href="products/all" class="nav-link "  ><i class="fa pr-1">&#x553;</i>All Products</a></li>
+          <li class="nav-item mx-5"><a href="productsFrom/clothing" class="nav-link"  ><i class="fa pr-1">&#x553;</i> Clothing</a></li>
+          <li class="nav-item mx-5"><a href="productsFrom/footwear" class="nav-link" ><i class="fa pr-1">&#x782;</i> Footwear</a></li>
+          <li class="nav-item mx-5"><a href="productsFrom/books" class="nav-link" ><i class="fa pr-1">&#xf02d;</i> Books</a></li>
+        </ul>
+
+
+</nav>

@@ -1,0 +1,11 @@
+[
+
+
+{ "prod_id": 1, "prod_name": "Shoe1", "prod_price":"2800","prod_cat": "shoes","prod_img": "../../assets/images/shoes.jpg","prod_det": "Shoes type 1" },
+{ "prod_id": 2, "prod_name": "Shoe2", "prod_price":"3000","prod_cat": "shoes","prod_img": "../../assets/images/shoes.jpg","prod_det": "Shoes type 2" },
+{ "prod_id": 3, "prod_name": "Shoe3", "prod_price":"3200","prod_cat": "shoes","prod_img": "../../assets/images/shoes.jpg","prod_det": "Shoes type 3" },
+{ "prod_id": 4, "prod_name": "Laptop1", "prod_price":"50000","prod_cat": "laptop","prod_img":"../../assets/images/laptop.jpg","prod_det": "Laptop type 1" },
+{ "prod_id": 5, "prod_name": "Laptop2", "prod_price":"60000","prod_cat": "laptop","prod_img":"../../assets/images/laptop.jpg","prod_det": "Laptop type 2" },
+{ "prod_id": 6, "prod_name": "Laptop3", "prod_price":"70000","prod_cat": "laptop","prod_img":"../../assets/images/laptop.jpg","prod_det": "Laptop type 3" },
+{ "prod_id": 7, "prod_name": "Laptop4", "prod_price":"80000","prod_cat": "laptop","prod_img":"../../assets/images/laptop.jpg","prod_det": "Laptop type 4" }
+  ]

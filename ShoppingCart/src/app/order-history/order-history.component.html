@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <h2 class="text-center my-4 txtColr">Order History</h2>
+  <table class="table table-striped text-center">
+    <thead>
+    <tr>
+      <th>Product Image</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let odetails of orderDetails">
+      <td><img src="{{odetails.image}}" height="150" width="180"></td>
+      <td>{{odetails.itemName}}</td>
+      <td>{{odetails.price}}</td>
+      <td>{{odetails.quantity}}</td>
+      <td>{{odetails.date | date:'short'}}</td>
+      <td><button class="btn colr text-white" (click)="viewDetails(odetails.productId)">See Details</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>

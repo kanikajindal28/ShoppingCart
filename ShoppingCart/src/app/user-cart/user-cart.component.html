@@ -1,0 +1,70 @@
+<app-nav-bar></app-nav-bar>
+<div class="container bg-light mt-3 d-flex flex-row" style="width: max-content">
+    <div class="bg-white my-5 " style="width: 200%">
+        <div class=" d-flex flex-row mt-3 mx-3">
+            <div><h2 class="txtColr">My Shopping Bag</h2></div>
+            <div class="txtColr mt-2 mr-0 ml-auto"><i class="fa">&#xf124;</i>Deliver to -  </div>
+
+          <div class="dropdown show ml-3">
+          <a class="btn colr dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" >
+            City
+          </a>
+          <div class="dropdown-menu" >
+            <a class="dropdown-item" href="#">Ambala</a>
+            <a class="dropdown-item" href="#">Delhi</a>
+            <a class="dropdown-item" href="#">Rajpura</a>
+          </div>
+        </div>
+
+        </div>
+            <div class="mx-4 d-flex flex-row my-5" *ngFor="let products of cartProducts">
+              <div>
+                <img src="{{products.product.image}}" height="229" width="250">
+              </div>
+              <div class="d-flex flex-column mr-auto ml-auto ">
+              <div><h4 class="text-center py-3">{{products.product.details}}</h4></div>
+                <div><h5 class="text-center">{{"₹" + products.product.price}}</h5></div>
+              <div class="mr-3 py-3"><b>Quantity :-</b>
+                <button class="btn btn-danger ml-3" (click)="decQuantity(products.product.productId)">-</button>
+                <span class="badge badge-light">{{products.quantity}}</span>
+                <button class="btn btn-danger" (click)="incQuantity(products.product.productId)">+</button>
+              </div>
+                <button  class="btn btn-danger text-white py-3" (click)="removeProduct(products.product.productId)">Remove Product</button>
+              </div>
+            </div>
+            <div class="mx-3 my-4" style="border-bottom:1px solid #b6a9c2 "></div>
+            <div class="ml-5 mt-5 txtColr" style="font-family: 'Courgette', cursive;"><h3>Total items in cart :- {{this.cartlength}}</h3></div>
+            <button class="btn colr mr-5 btn-lg pull-right mb-4 mt-n5" (click)="goToCheckout()" >Place Order</button>
+
+    </div>
+        <div class="d-flex flex-column ml-4"  style="width: 100%">
+            <div class="bg-white mt-5 mr-0 ml-auto pl-4" style="width: 100%">
+              <h3 class="text-center m-3">PRICE DETAILS</h3>
+              <div class="mr-3" style="border-bottom:1px solid #b6a9c2 "></div>
+              <div class="d-flex mx-3 mt-2">
+              <h6 class="text-secondary">Price</h6>
+              <p class="text-secondary ml-auto mr-0">{{this.sum}}</p>
+              </div>
+              <div class="d-flex mx-3">
+                <h6 class="text-secondary">Delivery</h6>
+                <p class="text-secondary ml-auto mr-0">₹40</p>
+              </div>
+              <div class="mr-3" style="border-bottom:1px solid #b6a9c2 "></div>
+              <div class="d-flex mx-3 mt-3">
+                <h6 >Total Payable</h6>
+                <p class="text-secondary ml-auto mr-0">{{this.sum + 40}}</p>
+              </div>
+              <div class="mr-3" style="border-bottom:1px solid #b6a9c2 "></div>
+              <p class="text-success">You will save on this order</p>
+            </div>
+            <div class="bg-white mt-3 mb-5 mr-0 ml-auto" >
+              <div class="d-flex mx-3">
+                <h5 class="mx-3 my-3">Add items worth ₹225 more for FREE delivery</h5>
+                <div class="my-3 txtColr"><i class="fa pr-1 fa-lg">&#xf0d1;</i></div>
+              </div>
+              <div class="mr-3" style="border-bottom:1px solid #b6a9c2 "></div>
+              <p class="text-secondary mx-2 my-3"><i class="fa pr-1 fa-lg text-success mx-3">&#xf084;</i>Safe and Secure Payments.Easy returns.100% Authentic products.</p>
+            </div>
+        </div>
+</div>
+<app-footer></app-footer>

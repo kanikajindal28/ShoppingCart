@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid bg-light mt-4">
+
+  <div class="row bg-light">
+    <div class="col-3 mt-1 bg-light">
+      <div class="card mt-3">
+        <div class="card-header bg-white ">
+          <div class="text-center ">
+            <img src="../assets/images/img2.jpg" height="200" width="200" style="border-radius: 40%;">
+          </div>
+        </div>
+        <div  class="text-center my-3">
+          <h2>{{user.name}}</h2>
+          <small class="text-muted">{{user.role}}</small>
+        </div>
+      </div>
+    </div>
+    <div class="col-9 mt-1 pr-5 pl-5 block bg-light">
+      <h4 class="pt-2">Account Details</h4><hr>
+
+      <form>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="name" placeholder="{{user.name}}" value="{{user.name}}"  [(ngModel)]="user.name" name="name">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="uname" placeholder="{{user.email}}" value="{{user.email}}" [(ngModel)]="user.email" name="email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="pwd" placeholder="{{user.password}}" [(ngModel)]="user.password" name="pswd">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="number" placeholder="{{user.mobileNo}}" value="{{user.mobileNo}}" [(ngModel)]="user.mobileNo" name="mob">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="address" placeholder="{{user.address}}" value="{{user.address}}" [(ngModel)]="user.address" name="address">
+        </div>
+        <button type="submit" class="btn colr mt-5 mb-5 w-100 text-white" (click)="editDetails()">Edit Details</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

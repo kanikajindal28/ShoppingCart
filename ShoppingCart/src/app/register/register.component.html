@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid" id="grad">
+
+
+  <div class="bg-white signupbox mb-5">
+
+    <h2 class="font1 p-5 text-center">Register with us</h2>
+
+    <div class="container">
+
+      <form action="login" class="was-validated">
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="name" placeholder="Your Name" name="name"  [(ngModel)]="user.name" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="uname" placeholder="Your Email Address" name="username" [(ngModel)]="user.email" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="pwd" placeholder="Choose Password" name="password" [(ngModel)]="user.password" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile Number" name="mobile" [(ngModel)]="user.mobileNo" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="address" placeholder="Enter Your Address" name="address" [(ngModel)]="user.address" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <b>I am a &nbsp;</b>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="gender" value="MALE" [(ngModel)]="user.gender">Male
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="gender" value="FEMALE" [(ngModel)]="user.gender">Female
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="gender" value="TRANSGENDER" [(ngModel)]="user.gender">Transgender
+          </label>
+        </div>
+        <button type="submit" class="btn btn-info mt-5 mb-5 w-100 colr" (click)="createUser()">REGISTER</button>
+      </form>
+      <div class="pb-5 mr-1">
+        <small>Already have an Account?<a style="color: #FF3F6C" href="login">Login here</a></small>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
+<app-footer></app-footer>

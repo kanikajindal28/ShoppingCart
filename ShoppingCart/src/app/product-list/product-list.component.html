@@ -1,0 +1,58 @@
+<app-nav-bar (childEvent)="this.allProducts=$event"></app-nav-bar>
+<div class="container d-flex flex-row bg-light p-3 mt-3">
+  <div id="div1" class="bg-white mx-2 p-3" style="width:30em">
+    <h5 class="text-center">Filters</h5>
+    <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
+        <div class="">
+        <h6 class=" text-center mt-3 mb-3">CATEGORIES</h6>
+          <form class="text-center txtColr my-2">
+            <div class="radio">
+              <label><input type="radio" name="category" (click)="goTo('clothing')">Clothing</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="category" (click)="goTo('footwear')">Footwear</label>
+            </div>
+            <div class="radio ">
+              <label><input type="radio" name="category" (click)="goTo('electronics')">Electronics</label>
+            </div>
+            <div class="radio disabled">
+              <label><input type="radio" name="category" (click)="goTo('books')">Books</label>
+            </div>
+          </form>
+        </div>
+    <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
+    <h6 class=" text-center mt-3">PRICE</h6>
+    <form class="text-center mt-3 txtColr">
+      <div class="checkbox">
+        <label ><input type="radio" name="price" (click)="filterPrice(0,1000)" class="mr-1">Below 1000</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="radio" name="price" (click)="filterPrice(1000,5000)" class="mr-1" value="">1000 to 5000</label>
+      </div>
+      <div class="checkbox disabled">
+        <label><input type="radio" name="price" (click)="filterPrice(5000,10000)" class="mr-1" value="" >5000 to 10000</label>
+      </div>
+      <div class="checkbox disabled">
+        <label><input type="radio" name="price" (click)="filterPrice(10000,60000)" class="mr-1" value="" >10000 and above</label>
+      </div>
+    </form>
+    <div class="text-center">
+    <button *ngIf="loginservice.isUserLoggedIn() && this.role=='admin'" class="btn colr text-white btn-lg mt-3" routerLink="/addProducts">Add Products</button>
+    </div>
+  </div>
+
+  <div  id="div2" class="bg-white p-2  d-flex flex-wrap" style="width: 100em" >
+
+    <div *ngFor="let product of allProducts" class="mx-3 my-3" style="height: 21em; width: 14em; background-color: #f7f5f7" >
+      <img src="{{product.image}}" class="ml-4 mt-3" height="170em" width="175em" />
+      <h5 class="ml-4  ">{{product.name}}</h5>
+
+      <p class="text-center ">{{"&#x20B9;"+product.price}}</p>
+      <button *ngIf="loginservice.isUserLoggedIn()" class="btn btn-sm colr ml-2 text-white" (click)="addtoCart(product.productId)">Add to Bag</button>
+      <button *ngIf="loginservice.isUserLoggedIn() && this.role=='admin'" class="btn btn-sm colr ml-2 text-white" (click)="deleteProduct(product.productId)">Delete Product</button>
+      <button (click)="seeDetails(product)" class="btn btn-sm colr pull-right mt-2 text-white w-75 mr-4">See Product </button>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

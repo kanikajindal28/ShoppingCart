@@ -1,0 +1,26 @@
+#grad {
+  height: 700px;
+  background-color: #F9E3F5;
+  background-image: linear-gradient(to bottom right, white,#f2d0f2,#fabbfa,white);
+}
+.font1 {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil&display=swap');
+
+.signupbox {
+  height : auto;
+  width : 370px;
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 35%;
+}
+.colr{
+  background-color:#FF3F6C;
+}
+.d-menu{
+  border-bottom:1px solid #FF3F6C;
+  display: block;
+  padding-top:5px;
+  padding-bottom:5px;
+}

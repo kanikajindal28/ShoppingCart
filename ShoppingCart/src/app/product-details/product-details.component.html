@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+<div class="container bg-light    mt-4 p-3">
+  <div class="d-flex flex-row">
+  <div class="bg-white">
+    <div class=" card bg-white my-3 mx-2 p-4">
+      <img src="{{this.product.image}}" height="400em" width="440em">
+    </div>
+  </div>
+  <div class="mx-4 bg-white" style="width:50%">
+    <h2 class="m-3 mt-5 text-center">{{this.product.name}}</h2>
+    <h3 class="text-secondary text-center">{{this.product.details}}</h3>
+    <h4 class="txtColr text-center mt-5">Special price : ₹{{this.product.price}}</h4>
+    <div class="mt-5">
+      <button class="btn btn-danger text-white my-2 btn-lg mx-3"  style="width:40%" (click)="addtoCart(productId)">Add To Cart</button>
+      <button class="btn btn-danger text-white my-2 ml-4 btn-lg pull-right mx-4" routerLink="/products/all" style="width:40%" >All Products</button>
+    </div>
+  </div>
+  </div>
+  <div *ngIf="loginService.isUserLoggedIn() && user.role=='admin'" class="bg-white mt-3 text-center">
+    <h2 class="txtColr py-4">Edit Product</h2>
+    <form class="form form-horizontal">
+
+      <div class="form-group ">
+        <label class="form-check-label control-label txtColr">Name</label>
+        <input type="text" class="form-control text-center" id="name"  value="{{product.name}}"  [(ngModel)]="product.name" name="pname">
+      </div>
+      <div class="form-group">
+        <label class="form-check-label control-label txtColr">Price</label>
+        <input type="email" class="form-control text-center" id="uname" value="{{product.price}}" [(ngModel)]="product.price" name="pprice">
+      </div>
+      <div class="form-group">
+        <label class="form-check-label control-label txtColr">Category</label>
+        <input class="form-control text-center" id="pwd" value="{{product.category}}" [(ngModel)]="product.category" name="pCategory">
+      </div>
+      <div class="form-group">
+        <label class="form-check-label control-label txtColr">Details:-</label>
+        <input type="text" class="form-control text-center" id="number" value="{{product.details}}" [(ngModel)]="product.details" name="pDetails">
+      </div>
+      <button type="submit" class="btn colr mt-5 mb-5 w-100 text-white" (click)="editProdDetails()">Edit Details</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>
